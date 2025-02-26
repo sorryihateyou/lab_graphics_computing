@@ -221,21 +221,21 @@ int main() {
 		//
 		////Pata 1
 		//model = glm::mat4(1.0f);
-		//model = glm::scale(model, glm::vec3(0.25f, 0.6f, 0.3f));// Ancho, grosor, profundida
+		//model = glm::scale(model, glm::vec3(0.25f, 0.6f, 0.3f));// Ancho, grosor, profundidad
 		//model = glm::translate(model, glm::vec3(3.5f, -0.6f, 1.9f));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		////Pata 2
 		//model = glm::mat4(1.0f);
-		//model = glm::scale(model, glm::vec3(0.25f, 0.6f, 0.3f));// Ancho, grosor, profundida
+		//model = glm::scale(model, glm::vec3(0.25f, 0.6f, 0.3f));// Ancho, grosor, profundidad
 		//model = glm::translate(model, glm::vec3(-3.5f, -0.6f, 1.9f));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		////Pata 3
 		//model = glm::mat4(1.0f);
-		//model = glm::scale(model, glm::vec3(0.25f, 0.6f, 0.3f));// Ancho, grosor, profundida
+		//model = glm::scale(model, glm::vec3(0.25f, 0.6f, 0.3f));// Ancho, grosor, profundidad
 		//model = glm::translate(model, glm::vec3(3.5f, -0.6f, -1.9f));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -243,7 +243,7 @@ int main() {
 
 		////Pata 4
 		//model = glm::mat4(1.0f);
-		//model = glm::scale(model, glm::vec3(0.25f, 0.6f, 0.3f));// Ancho, grosor, profundida
+		//model = glm::scale(model, glm::vec3(0.25f, 0.6f, 0.3f));// Ancho, grosor, profundidad
 		//model = glm::translate(model, glm::vec3(-3.5f, -0.6f, -1.9f));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -267,28 +267,28 @@ int main() {
 		//Patas
 		//Pata delantera derecha
 		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundida
+		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundidad
 		model = glm::translate(model, glm::vec3(-0.978f, -2.3f, -0.75f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		//Pata delantera izquierda
 		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundida
+		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundidad
 		model = glm::translate(model, glm::vec3(-0.978f, -2.3f, 0.75f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		//Pata trasera derecha
 		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundida
+		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundidad
 		model = glm::translate(model, glm::vec3(2.979f, -2.3f, -0.75f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		//Pata trasera izquierda
 		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundida
+		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundidad
 		model = glm::translate(model, glm::vec3(2.979f, -2.3f, 0.75f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -297,13 +297,13 @@ int main() {
 		//Alas
 		//Ala derecha
 		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));// Ancho, grosor, profundida
+		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));// Ancho, grosor, profundidad
 		model = glm::translate(model, glm::vec3(2.979f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.4f, 0.2f, 0.2f));// Ancho, grosor, profundida
+		model = glm::scale(model, glm::vec3(0.4f, 0.2f, 0.2f));// Ancho, grosor, profundidad
 		model = glm::translate(model, glm::vec3(1.749f, 0.9f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
