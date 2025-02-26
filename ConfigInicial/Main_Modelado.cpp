@@ -257,12 +257,12 @@ int main() {
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
-		//Cabeza
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(1.5f, 1.0f, 1.0f));// Ancho, grosor, profundidad
-		model = glm::translate(model, glm::vec3(-0.4f, 0.3f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+		////Cabeza
+		//model = glm::mat4(1.0f);
+		//model = glm::scale(model, glm::vec3(1.5f, 1.0f, 1.0f));// Ancho, grosor, profundidad
+		//model = glm::translate(model, glm::vec3(-0.4f, 0.3f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		//Patas
 		//Pata delantera derecha
@@ -290,6 +290,21 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::scale(model, glm::vec3(0.4f, 0.6f, 0.4f));// Ancho, grosor, profundida
 		model = glm::translate(model, glm::vec3(2.979f, -2.3f, 0.75f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+
+		//Alas
+		//Ala derecha
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));// Ancho, grosor, profundida
+		model = glm::translate(model, glm::vec3(2.979f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.4f, 0.2f, 0.2f));// Ancho, grosor, profundida
+		model = glm::translate(model, glm::vec3(1.749f, 0.9f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
