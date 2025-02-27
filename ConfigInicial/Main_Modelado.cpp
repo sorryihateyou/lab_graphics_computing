@@ -133,6 +133,93 @@ int main() {
 		0.5f,  0.5f,  0.5f,  255.0f, 255.0f,255.0f,
 		-0.5f,  0.5f,  0.5f, 255.0f, 255.0f,255.0f,
 		-0.5f,  0.5f, -0.5f, 255.0f, 255.0f,255.0f,
+
+
+		//Parte morada
+		-0.5f, -0.5f, 0.5f, 0.8f, 0.6f,1.0f,//Front
+		0.5f, -0.5f, 0.5f,  0.8f, 0.6f,1.0f,
+		0.5f,  0.5f, 0.5f,  0.8f, 0.6f,1.0f,
+		0.5f,  0.5f, 0.5f,  0.8f, 0.6f,1.0f,
+		-0.5f,  0.5f, 0.5f, 0.8f, 0.6f,1.0f,
+		-0.5f, -0.5f, 0.5f, 0.8f, 0.6f,1.0f,
+
+		-0.5f, -0.5f,-0.5f, 0.8f, 0.6f,1.0f,//Back
+		 0.5f, -0.5f,-0.5f, 0.8f, 0.6f,1.0f,
+		 0.5f,  0.5f,-0.5f, 0.8f, 0.6f,1.0f,
+		 0.5f,  0.5f,-0.5f, 0.8f, 0.6f,1.0f,
+		-0.5f,  0.5f,-0.5f, 0.8f, 0.6f,1.0f,
+		-0.5f, -0.5f,-0.5f, 0.8f, 0.6f,1.0f,
+
+		 0.5f, -0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+		 0.5f, -0.5f, -0.5f,  0.8f, 0.6f,1.0f,
+		 0.5f,  0.5f, -0.5f,  0.8f, 0.6f,1.0f,
+		 0.5f,  0.5f, -0.5f,  0.8f, 0.6f,1.0f,
+		 0.5f,  0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+		 0.5f,  -0.5f, 0.5f, 0.8f, 0.6f,1.0f,
+
+		-0.5f,  0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+		-0.5f,  0.5f, -0.5f,  0.8f, 0.6f,1.0f,
+		-0.5f, -0.5f, -0.5f,  0.8f, 0.6f,1.0f,
+		-0.5f, -0.5f, -0.5f,  0.8f, 0.6f,1.0f,
+		-0.5f, -0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+		-0.5f,  0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+
+		-0.5f, -0.5f, -0.5f, 0.8f, 0.6f,1.0f,
+		0.5f, -0.5f, -0.5f,  0.8f, 0.6f,1.0f,
+		0.5f, -0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+		0.5f, -0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+		-0.5f, -0.5f,  0.5f, 0.8f, 0.6f,1.0f,
+		-0.5f, -0.5f, -0.5f, 0.8f, 0.6f,1.0f,
+
+		-0.5f,  0.5f, -0.5f, 0.8f, 0.6f,1.0f,
+		0.5f,  0.5f, -0.5f,  0.8f, 0.6f,1.0f,
+		0.5f,  0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+		0.5f,  0.5f,  0.5f,  0.8f, 0.6f,1.0f,
+		-0.5f,  0.5f,  0.5f, 0.8f, 0.6f,1.0f,
+		-0.5f,  0.5f, -0.5f, 0.8f, 0.6f,1.0f,
+
+		//Parte morada claro
+		-0.5f, -0.5f, 0.5f, 0.95f, 0.85f,1.0f,//Front
+		0.5f, -0.5f, 0.5f,  0.95f, 0.85f,1.0f,
+		0.5f,  0.5f, 0.5f,  0.95f, 0.85f,1.0f,
+		0.5f,  0.5f, 0.5f,  0.95f, 0.85f,1.0f,
+		-0.5f,  0.5f, 0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f, -0.5f, 0.5f, 0.95f, 0.85f,1.0f,
+
+		-0.5f, -0.5f,-0.5f, 0.95f, 0.85f,1.0f,//Back
+		 0.5f, -0.5f,-0.5f, 0.95f, 0.85f,1.0f,
+		 0.5f,  0.5f,-0.5f, 0.95f, 0.85f,1.0f,
+		 0.5f,  0.5f,-0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f,  0.5f,-0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f, -0.5f,-0.5f, 0.95f, 0.85f,1.0f,
+
+		 0.5f, -0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		 0.5f, -0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		 0.5f,  0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		 0.5f,  0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		 0.5f,  0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		 0.5f,  -0.5f, 0.5f, 0.95f, 0.85f,1.0f,
+
+		-0.5f,  0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f,  0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f, -0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f, -0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f, -0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f,  0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+
+		-0.5f, -0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		0.5f, -0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		0.5f, -0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		0.5f, -0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f, -0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f, -0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+
+		-0.5f,  0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		0.5f,  0.5f, -0.5f, 0.95f, 0.85f,1.0f,
+		0.5f,  0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		0.5f,  0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f,  0.5f,  0.5f, 0.95f, 0.85f,1.0f,
+		-0.5f,  0.5f, -0.5f, 0.95f, 0.85f,1.0f,
 	};
 
 
@@ -182,7 +269,7 @@ int main() {
 
 		// Render
 		// Clear the colorbuffer
-		glClearColor(0.9f, 0.75f, 1.0f, 1.0f);
+		glClearColor(0.7f, 0.9f, 0.9f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 
 
@@ -258,11 +345,11 @@ int main() {
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		////Cabeza
-		//model = glm::mat4(1.0f);
-		//model = glm::scale(model, glm::vec3(1.5f, 1.0f, 1.0f));// Ancho, grosor, profundidad
-		//model = glm::translate(model, glm::vec3(-0.4f, 0.3f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(1.5f, 1.0f, 1.0f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(-0.4f, 0.3f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		//Patas
 		//Pata delantera derecha
@@ -298,16 +385,142 @@ int main() {
 		//Ala derecha
 		model = glm::mat4(1.0f);
 		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));// Ancho, grosor, profundidad
-		model = glm::translate(model, glm::vec3(2.979f, 0.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(2.979f, 0.0f, 2.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		model = glm::mat4(1.0f);
 		model = glm::scale(model, glm::vec3(0.4f, 0.2f, 0.2f));// Ancho, grosor, profundidad
-		model = glm::translate(model, glm::vec3(1.749f, 0.9f, 1.0f));
+		model = glm::translate(model, glm::vec3(1.7482f, 0.9f, 2.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.6f, 0.2f, 0.2f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(1.32f, 1.8f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+
+		//Ala izquierda
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(2.979f, 0.0f, -2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.4f, 0.2f, 0.2f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(1.7482f, 0.9f, -2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.6f, 0.2f, 0.2f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(1.32f, 1.8f, -2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		//Orejas
+		//Oreja derecha
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.16f, 0.5f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(-0.4f, 1.8f, -1.2f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		//Oreja izquierda
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.16f, 0.5f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(-0.4f, 1.8f, 1.2f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		//Cabello
+		//morado fuerte
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.9f, 0.2f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(-0.15f, 4.45f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 73);
+
+		//morado fuerte
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.256f, 1.235f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(1.0f, 0.3f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 73);
+
+		//morado claro
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.256f, 0.9f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(1.5f, 0.3f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 72, 110);
+
+		//morado fuerte
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.256f, 0.7f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(2.3f, 0.3f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 73);
+
+		//morado claro
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.256f, 0.4f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(2.8f, 0.2f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 72, 110);
+
+		//morado fuerte
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.256f, 0.2f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(3.2f, -0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 73);
+
+		//Cola
+		//morado fuerte
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.256f, 0.2f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(5.5f, -0.3f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 73);
+
+		//morado fuerte
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.24f, 0.7f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(6.5f, -0.45f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 73);
+
+		//morado fuerte
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.4f, 0.2f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(4.1f, -3.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 73);
+
+		//morado claro
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.4f, 0.2f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(4.6f, -2.8f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 72, 110);
+
+		//morado claro
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.2f, 0.4f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(10.2f, -1.64f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 72, 110);
+
+		//morado claro
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.3f, 0.2f, 0.3f));// Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(7.3f, -3.78f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 72, 110);
 				
 		glBindVertexArray(0);
 		// Swap the screen buffers
