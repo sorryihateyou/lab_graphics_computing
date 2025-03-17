@@ -41,9 +41,9 @@ void DoMovement( );
 
 
 // Camera
-Camera camera( glm::vec3( 0.0f, 0.0f, 3.0f ) );
+Camera camera( glm::vec3( 0.0f, 0.0f, 5.0f ) );
 bool keys[1024];
-GLfloat lastX = 400, lastY = 300;
+GLfloat lastX = 800, lastY = 600;
 bool firstMouse = true;
 
 GLfloat deltaTime = 0.0f;
@@ -105,8 +105,13 @@ int main( )
     // Load models
     Model dog((char*)"Models/RedDog.obj");
     Model mike((char*)"Models/mike.obj");
-    Model shrek((char*)"Models/Shrek.obj");
-    glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 100.0f );
+    Model lounger((char*)"Models/Lounger.obj");
+    Model Sunlounger((char*)"Models/Sun-lounger_OBJ.obj");
+    Model Ford((char*)"Models/tripo_pbr_model_ecd38e58-bf4e-4698-8bca-5fa74dfbafb9.obj");
+    Model Lifeguard((char*)"Models/tripo_pbr_model_32e6bde2-59b6-40d9-acd3-fa5b8e3bd72c.obj");
+    Model Asador((char*)"Models/asador.obj");
+    Model Piscina((char*)"Models/piscina.obj");
+    glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 1000.0f );
     
     
   
@@ -135,25 +140,68 @@ int main( )
 
         // Draw the loaded model
         glm::mat4 model(1);
-        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        dog.Draw(shader);
+        /*glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        dog.Draw(shader);*/
 
-        model = glm::translate(model, glm::vec3(3.0f, 0.0f, 0.0f));
-        model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+        model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         dog.Draw(shader);
 
         //Mike Wazoski
-        model = glm::translate(model, glm::vec3(-1.0f, 0.0f, 1.0f));
+        /*model = glm::translate(model, glm::vec3(-1.0f, 0.0f, 1.0f));
         model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        mike.Draw(shader);*/
+
+        //Mike Wazoski
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(-6.0f, 0.0f, -1.5f));
+        model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         mike.Draw(shader);
 
-        //Shrek
-        model = glm::translate(model, glm::vec3(-3.0f, 0.0f, 1.0f));
-        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        //Bench
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.9f, 0.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        shrek.Draw(shader);
+        lounger.Draw(shader);
+
+        //Sun Lounger
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(6.0f, 0.0f, 5.0f));
+        model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Sunlounger.Draw(shader);
+
+        //Ford
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, 0.2f, -5.0f));
+        model = glm::scale(model, glm::vec3(9.0f, 9.0f, 9.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Ford.Draw(shader);
+
+        ////Lifeguard
+        //model = glm::mat4(1.0f);
+        //model = glm::translate(model, glm::vec3(-0.5f, 0.3f, 1.2f));
+        //model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+        //glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        //Lifeguard.Draw(shader);
+
+        ////Asador
+        //model = glm::mat4(1.0f);
+        //model = glm::translate(model, glm::vec3(-0.1f, 0.125f, 1.5f));
+        //model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+        //glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        //Asador.Draw(shader);
+
+        //Piscina
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(-3.3f, 0.0f, 0.3f));
+        model = glm::scale(model, glm::vec3(15.0f, 15.0f, 15.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Piscina.Draw(shader);
 
         // Swap the buffers
         glfwSwapBuffers( window );
