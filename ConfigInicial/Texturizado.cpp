@@ -107,20 +107,73 @@ int main()
 	// Set up vertex data (and buffer(s)) and attribute pointers
 	GLfloat vertices[] =
 	{
+		//Cara frontal
 		// Positions            // Colors              // Texture Coords
-		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.1f,0.3f,
-		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		0.5f,0.0f,
-		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    1.0f,1.0f,
-		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,1.0f,
+		-0.5f, -0.5f, 0.5f,    1.0f, 1.0f,1.0f,		0.036f,0.3814f,
+		 0.5f, -0.5f, 0.5f,	   1.0f, 1.0f,1.0f,		0.2738f,0.3824f,
+		 0.5f,  0.5f, 0.5f,    1.0f, 1.0f,1.0f,	    0.2718f,0.6175f,
+		-0.5f,  0.5f, 0.5f,    1.0f, 1.0f,1.0f,		0.036f,0.6175f,
+
+		//Cara izquierda
+		// Positions            // Colors              // Texture Coords
+		0.5f, -0.5f, -0.5f,    1.0f, 1.0f,1.0f,		0.28f,0.3855f,
+		0.5f, -0.5f,  0.5f,	   1.0f, 1.0f,1.0f,		0.5102f,0.3848f,
+		0.5f,  0.5f,  0.5f,    1.0f, 1.0f,1.0f,	    0.5131f,0.6170f,
+		0.5f,  0.5f, -0.5f,    1.0f, 1.0f,1.0f,		0.2780f,0.6148f,
+
+		//Cara trasera
+		// Positions            // Colors              // Texture Coords
+		-0.5f, -0.5f, -0.5f,    1.0f, 1.0f,1.0f,		0.51f,0.3818f,
+		 0.5f, -0.5f, -0.5f,	1.0f, 1.0f,1.0f,		0.7547,0.3819f,
+		 0.5f,  0.5f, -0.5f,    1.0f, 1.0f,1.0f,	    0.7535f,0.6170f,
+		-0.5f,  0.5f, -0.5f,    1.0f, 1.0f,1.0f,		0.51f,0.6170f,
+
+		//Cara derecha
+		// Positions            // Colors              // Texture Coords
+		-0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,    0.7613f,0.3839f, 
+		-0.5f, -0.5f, 0.5f,	   1.0f, 1.0f,1.0f,		0.9965f,0.3860f,
+		-0.5f,  0.5f, 0.5f,    1.0f, 1.0f,1.0f,	0.9957f,0.6161f,
+		-0.5f, 0.5f, -0.5f,    1.0f, 1.0f,1.0f,		0.76f,0.6161f,
+
+		//Cara superior
+		// Positions            // Colors              // Texture Coords
+		-0.5f,  0.5f, -0.5f,   1.0f, 1.0f,1.0f,   0.2798f, 0.6250f,
+		 0.5f,  0.5f, -0.5f,   1.0f, 1.0f,1.0f,   0.5129f, 0.6221f,
+		 0.5f,  0.5f,  0.5f,   1.0f, 1.0f,1.0f,   0.5120f, 0.8590f,
+		-0.5f,  0.5f,  0.5f,   1.0f, 1.0f,1.0f,   0.2798f, 0.8571f,
+
+		//Cara inferior
+		// Positions            // Colors              // Texture Coords
+		 -0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,   0.2785f, 0.1464f,
+		 0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,   0.5122f, 0.1429f,
+		 0.5f, -0.5f,  0.5f,   1.0f, 1.0f,1.0f,   0.5122f, 0.3766f,
+		-0.5f, -0.5f,  0.5f,   1.0f, 1.0f,1.0f,   0.2797f, 0.3766f
 
 		
 	};
 
 	GLuint indices[] =
 	{  // Note that we start from 0!
-		0,1,3,
-		1,2,3
-	
+		/*0,1,3,
+		1,2,3*/
+
+		0, 1, 2, 
+		2, 3, 0,  // Cara frontal
+
+		4, 5, 6, 
+		6, 7, 4,  // Cara trasera
+
+		8, 9,10,
+		10,11, 8,  // Cara izquierda
+
+	   12,13,14,
+	   14,15,12,  // Cara derecha
+
+		16,17,18,
+	   18,19,16,  // Cara superior
+
+	   20,21,22,
+	   22,23,20   // Cara inferior
 	};
 
 	// First, set the container's VAO (and VBO)
@@ -214,7 +267,7 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		// Draw the light object (using light's vertex attributes)
 		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 24, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
 
 		// Swap the screen buffers
