@@ -16,6 +16,14 @@ struct Light
     vec3 specular;
 };
 
+struct Light2
+{
+    vec3 position;
+    
+    vec3 ambient2;
+    vec3 diffuse2;
+    vec3 specular2;
+};
 
 in vec3 FragPos;
 in vec3 Normal;

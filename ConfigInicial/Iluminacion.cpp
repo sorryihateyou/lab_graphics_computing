@@ -112,6 +112,13 @@ int main()
     // Load models
     Model red_dog((char*)"Models/RedDog.obj");
     Model mike((char*)"Models/Mike.obj");
+    Model lounger((char*)"Models/Lounger.obj");
+    Model Sunlounger((char*)"Models/Sun-lounger_OBJ.obj");
+    Model Ford((char*)"Models/tripo_pbr_model_ecd38e58-bf4e-4698-8bca-5fa74dfbafb9.obj");
+    Model Lifeguard((char*)"Models/tripo_pbr_model_32e6bde2-59b6-40d9-acd3-fa5b8e3bd72c.obj");
+    Model Asador((char*)"Models/asador.obj");
+    Model Piscina((char*)"Models/piscina.obj");
+    Model Luna((char*)"Models/moon.obj");
     glm::mat4 projection = glm::perspective(camera.GetZoom(), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
 
     float vertices[] = {
@@ -229,13 +236,13 @@ int main()
        
 
         // Set lights properties
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"), 0.3f, 0.3f, 0.3f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"), 0.2f, 0.2f, 0.2f);
         glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse"), 0.2f, 0.7f, 0.8f);
         glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular"), 0.3f, 0.6f, 0.4f);
 
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"), 0.4f, 0.4f, 0.4f);
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse"), 0.6f, 0.8f, 0.1f);
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular"), 0.2f, 0.5f, 0.6f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient2"), 0.4f, 0.4f, 0.4f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse2"), 0.6f, 0.8f, 0.1f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular2"), 0.2f, 0.5f, 0.6f);
 
 
 
@@ -247,17 +254,66 @@ int main()
         glUniform3f(glGetUniformLocation(lightingShader.Program, "material.ambient"), 0.5f, 0.5f, 0.5f);
         glUniform3f(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 0.7f, 0.2f, 0.4f);
         glUniform3f(glGetUniformLocation(lightingShader.Program, "material.specular"), 0.6f, 0.6f, 0.6f);
-        glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 0.6f);
+        glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 0.9f);
 
 
         // Draw the loaded model
         glm::mat4 model(1);
+        model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f));
         model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
         glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         glBindVertexArray(VAO);
        
         red_dog.Draw(lightingShader);
+
+        //Mike Wazawski
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(-6.0f, -0.55f, -5.0f));
+        model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         mike.Draw(lightingShader);
+
+        //Bench
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(9.0f, -1.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        lounger.Draw(lightingShader);
+
+        //Sun Lounger
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(6.0f, -1.0f, 5.0f));
+        model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Sunlounger.Draw(lightingShader);
+
+        //Ford
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, 2.0f, -17.0f));
+        model = glm::scale(model, glm::vec3(20.0f, 20.0f, 20.0f));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Ford.Draw(lightingShader);
+
+        //Lifeguard
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(-0.5f, 0.3f, 1.2f));
+        model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Lifeguard.Draw(lightingShader);
+
+        //Asador
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(-0.1f, 0.12f, 5.0f));
+        model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Asador.Draw(lightingShader);
+
+        //Piscina
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(-3.3f, 0.0f, 0.3f));
+        model = glm::scale(model, glm::vec3(15.0f, 15.0f, 15.0f));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Piscina.Draw(lightingShader);
         //glDrawArrays(GL_TRIANGLES, 0, 36);
         
 
@@ -271,14 +327,15 @@ int main()
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
         model = glm::mat4(1.0f);
         model = glm::translate(model, lightPos + movelightPos);
-        model = glm::scale(model, glm::vec3(0.3f));
+        model = glm::scale(model, glm::vec3(0.6f));
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        Luna.Draw(lightingShader);
+        /*glDrawArrays(GL_TRIANGLES, 0, 36);*/
         glBindVertexArray(0);
 
 
-        lampshader.Use();
+        /*lampshader.Use();
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
         model = glm::mat4(1.0f);
@@ -287,7 +344,7 @@ int main()
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
-        glBindVertexArray(0);
+        glBindVertexArray(0);*/
 
 
         // Swap the buffers
