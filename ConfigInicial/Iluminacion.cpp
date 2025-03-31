@@ -1,7 +1,7 @@
-/*
-Diego Adri�n Del Razo S�nchez
+﻿/*
+Diego Adrián Del Razo Sánchez
 25 de marzo de 2025
-Pr�ctica 8
+Práctica 8
 319114939
 */
 
@@ -53,6 +53,15 @@ GLfloat deltaTime = 0.0f;
 GLfloat lastFrame = 0.0f;
 float rot = 0.0f;
 bool activanim = false;
+
+float moveLightPosY = 0.0f; // Movimiento en Y
+float moveLightPosZ = 0.0f; // Movimiento en Z
+float lightAngle = 0.0f; // Ángulo de rotación
+float lightRadius = 3.5f; // Radio del giro
+
+bool Day = true;  // Verdadero si es de día, falso si es de noche
+glm::vec3 lightColor(1.0f, 1.0f, 0.8f);  // Color de luz para el día 
+
 
 int main()
 {
@@ -120,6 +129,11 @@ int main()
     Model Piscina((char*)"Models/piscina.obj");
     Model Luna((char*)"Models/moon.obj");
     glm::mat4 projection = glm::perspective(camera.GetZoom(), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
+    glm::mat4 modelLight(1.0f);
+    modelLight = glm::translate(modelLight, lightPos);  // Posición de la luz
+    modelLight = glm::scale(modelLight, glm::vec3(0.3f));  // Escala del modelo de luz (ajusta el tamaño)
+
+
 
     float vertices[] = {
       -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
@@ -165,13 +179,21 @@ int main()
         -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
     };
 
+    GLuint lightCubeVAO, lightCubeVBO;
+    glGenVertexArrays(1, &lightCubeVAO);
+    glGenBuffers(1, &lightCubeVBO);
+    glBindVertexArray(lightCubeVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, lightCubeVBO);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    glBindVertexArray(0);
+
     // First, set the container's VAO (and VBO)
     GLuint VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     // Position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);
     glEnableVertexAttribArray(0);
@@ -231,31 +253,52 @@ int main()
         glUniform3f(viewPosLoc, camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
 
 
-        glUniform3f(lightPosLoc, lightPos2.x + movelightPos, lightPos2.y + movelightPos, lightPos2.z + movelightPos);
-        glUniform3f(viewPosLoc, camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
        
-
         // Set lights properties
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"), 0.2f, 0.2f, 0.2f);
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse"), 0.2f, 0.7f, 0.8f);
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular"), 0.3f, 0.6f, 0.4f);
+        if (Day)
+        {
+            // Luz diurna
+            glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"), 0.3f, 0.3f, 0.1f);  // Luz ambiental más intensa
+            glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse"), 1.0f, 1.0f, 0.8f); // Luz difusa más intensa (amarilla)
+            glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular"), 1.0f, 1.0f, 0.8f);  // Luz especular más intensa (brillante)
 
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient2"), 0.4f, 0.4f, 0.4f);
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse2"), 0.6f, 0.8f, 0.1f);
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular2"), 0.2f, 0.5f, 0.6f);
+            // Sol
+            glm::mat4 modelLight(1.0f);
+            modelLight = glm::translate(modelLight, lightPos);
+            modelLight = glm::scale(modelLight, glm::vec3(0.3f));
+            glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelLight));
+            Luna.Draw(lightingShader);  // Modelo de sol
 
+        }
+        else
+        {
+            // Luz nocturna 
+            glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"), 0.2f, 0.2f, 0.2f);  // Luz ambiental más tenue
+            glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse"), 0.1f, 0.1f, 0.5f);    // Luz azul difusa
+            glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular"), 0.1f, 0.1f, 0.3f);   // Luz azul especular
 
+            // Luna
+            glm::mat4 modelLight(1.0f);
+            modelLight = glm::translate(modelLight, lightPos);
+            modelLight = glm::scale(modelLight, glm::vec3(0.3f));
+            glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelLight));
+            Luna.Draw(lightingShader);  // Modelo de luna
+        }
 
-        glm::mat4 view = camera.GetViewMatrix();
-        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-
+        
         // Set material properties
         glUniform3f(glGetUniformLocation(lightingShader.Program, "material.ambient"), 0.5f, 0.5f, 0.5f);
         glUniform3f(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 0.7f, 0.2f, 0.4f);
         glUniform3f(glGetUniformLocation(lightingShader.Program, "material.specular"), 0.6f, 0.6f, 0.6f);
         glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 0.9f);
 
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "viewPos"), camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
+
+        glm::mat4 view = camera.GetViewMatrix();
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
+
+       
 
         // Draw the loaded model
         glm::mat4 model(1);
@@ -423,6 +466,13 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
         movelightPos -= 0.1f;
     }
 
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, GL_TRUE);
+
+    if (key == GLFW_KEY_N && action == GLFW_PRESS)  // Cambiar entre sol y luna
+    {
+        Day = !Day;  // Cambiar entre día y noche
+    }
 
 }
 
