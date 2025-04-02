@@ -159,8 +159,17 @@ int main()
 	Shader lightingShader("Shader/lighting.vs", "Shader/lighting.frag");
 	Shader lampShader("Shader/lamp.vs", "Shader/lamp.frag");
 	
-	Model Dog((char*)"Models/BubbleMike.obj");
-	Model Piso((char*)"Models/piso.obj");
+	/*Model Dog((char*)"Models/BubbleMike.obj");
+	Model Piso((char*)"Models/piso.obj");*/
+
+	Model red_dog((char*)"Models/RedDog.obj");
+	Model mike((char*)"Models/Mike.obj");
+	Model lounger((char*)"Models/Lounger.obj");
+	Model Sunlounger((char*)"Models/Sun-lounger_OBJ.obj");
+	Model Ford((char*)"Models/tripo_pbr_model_ecd38e58-bf4e-4698-8bca-5fa74dfbafb9.obj");
+	Model Lifeguard((char*)"Models/tripo_pbr_model_32e6bde2-59b6-40d9-acd3-fa5b8e3bd72c.obj");
+	Model Asador((char*)"Models/asador.obj");
+	Model Piscina((char*)"Models/piscina.obj");
 
 
 
@@ -222,8 +231,8 @@ int main()
 
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"),0.1f,0.1f,0.1f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.1f, 0.1f, 0.1f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"),0.4f,0.4f,0.4f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"),0.0f, 0.0f, 0.0f);
 
 
@@ -305,21 +314,70 @@ int main()
 	
 
 		//Carga de modelo 
-        view = camera.GetViewMatrix();	
+        /*view = camera.GetViewMatrix();	
 		model = glm::mat4(1);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		Piso.Draw(lightingShader);
+		Piscina.Draw(lightingShader);*/
 
+		//Mike Wazawski
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-6.0f, -0.55f, -5.0f));
+		model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
+		glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		mike.Draw(lightingShader);
+
+		//Bench
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(9.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
+		glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		lounger.Draw(lightingShader);
+
+		//Sun Lounger
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(6.0f, -1.0f, 5.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+		glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		Sunlounger.Draw(lightingShader);
+
+		//Ford
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 2.0f, -17.0f));
+		model = glm::scale(model, glm::vec3(20.0f, 20.0f, 20.0f));
+		glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		Ford.Draw(lightingShader);
+
+		//Lifeguard
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-0.5f, 0.3f, 1.2f));
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+		glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		Lifeguard.Draw(lightingShader);
+
+		//Asador
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-0.1f, 0.12f, 5.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+		glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		Asador.Draw(lightingShader);
 
 	
 		model = glm::mat4(1);
-		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		//glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "transparency"), 0);
-	    Dog.Draw(lightingShader);
-		glDisable(GL_BLEND);  //Desactiva el canal alfa 
+	    red_dog.Draw(lightingShader);
+		//glDisable(GL_BLEND);  //Desactiva el canal alfa 
 		glBindVertexArray(0);
+
+		//Piscina
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-3.3f, 0.0f, 0.3f));
+		model = glm::scale(model, glm::vec3(15.0f, 15.0f, 15.0f));
+		glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		Piscina.Draw(lightingShader);
+
 	
 
 		// Also draw the lamp object, again binding the appropriate shader
