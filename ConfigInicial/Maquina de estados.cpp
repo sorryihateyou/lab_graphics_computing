@@ -1,7 +1,7 @@
 // Diego Adrian Del Razo Sanchez
-// Practica 11
+// Practica Adicional
 // 319114939
-// 22 de abril de 2025
+// 09 de mayo de 2025
 
 #include <iostream>
 #include <cmath>
